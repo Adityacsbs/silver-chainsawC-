@@ -33,6 +33,17 @@ int sum(int arr[],int size){
     return sum;
 }
 
+bool search(int arr[],int size,int key){
+
+    for(int i=0;i<size;i++){
+        if(arr[i]==key){
+            return 1;
+        }
+    }
+    return 0;
+
+}
+
 int main (){
     int n;
     cin>>n;
@@ -50,6 +61,17 @@ int main (){
     cout<<endl;
 
     cout<<"sum is :- "<<sum(arr,n)<<endl;
+
+    cout<<"enter the key :-"<<endl;
+    int key;
+    cin>>key;
+
+    bool found = search(arr,n,key);
+   if(found){
+    cout<<"key found in array."<<endl;
+   }else{
+    cout<<"key not found. "<<endl;
+   }
 
 
     return 0;
