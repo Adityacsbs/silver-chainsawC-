@@ -77,6 +77,29 @@ void reverse(int arr[],int size){
     cout<<endl;
   }  
     
+    int findUnique(int *arr, int size)
+  {
+    int ans;
+
+    int count =1;
+
+    for(int i=0;i<size;i++){
+        
+
+        for(int j=i+1;j<size;j++){
+
+            if(arr[i]==arr[j]){
+                count++;
+            }
+        }
+        if(count==1){
+                 ans = arr[i];
+                 return ans;
+            }
+
+    }
+    return 0;
+}
 
 
 int main (){
@@ -111,6 +134,10 @@ int main (){
    reverse(arr,n);
 
    swap_alter(arr,n);
+
+   cout<<endl;
+
+   cout<<"unique element is :- "<<findUnique(arr,n)<<endl;
 
 
     return 0;
